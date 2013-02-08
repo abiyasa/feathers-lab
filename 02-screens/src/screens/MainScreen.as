@@ -9,20 +9,19 @@ package screens
 	import feathers.controls.ScrollContainer;
 	import feathers.layout.VerticalLayout;
 	import starling.display.DisplayObject;
+	import starling.events.Event;
 	import starling.textures.Texture;
 	
 	/**
 	 * Hello Screen
 	 * @author Abiyasa
 	 */
-	public class HelloScreen extends Screen
+	public class MainScreen extends Screen
 	{
-		[Embed(source="../../assets/hello.png")]
-		private const IMAGE:Class;
-		
-		protected var _button:Button;
 		protected var _header:Header;
 		protected var _container:ScrollContainer;
+		
+		protected var _buttons:Array;
 		
 		public function MainScreen()
 		{
@@ -34,14 +33,8 @@ package screens
 			super.initialize();
 			
 			_header = new Header();
-			_header.title = 'Hello';
-			var leftItems:Vector.<DisplayObject> = new Vector.<DisplayObject>();
-			_header.leftItems = leftItems;
+			_header.title = 'Welcome';
 			this.addChild(_header);
-			
-			_button = new Button();
-			_button.label = 'Back';
-			leftItems.push(_button);
 			
 			_container = new ScrollContainer();
 			_container.padding = 15;
@@ -51,13 +44,12 @@ package screens
 			layout.horizontalAlign = VerticalLayout.HORIZONTAL_ALIGN_CENTER;
 			_container.layout = layout;
 			
-			_image = new ImageLoader();
-			_image.source = Texture.fromBitmap(Bitmap(new IMAGE()));
-			_container.addChild(_image);
-			
-			_label = new Label();
-			_label.text = 'Is it me you\'re looking for ?';
-			_container.addChild(_label);
+			_buttons = [];
+			var button:Button = new Button();
+			button.label = 'Hello';
+			button.width = 200;
+			_buttons.push(button);
+			_container.addChild(button);
 		}
 		
 		override protected function draw():void
@@ -70,7 +62,6 @@ package screens
 			_container.y = _header.height;
 			_container.width = this.actualWidth;
 		}
-		
 	}
 
 }
