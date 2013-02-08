@@ -9,7 +9,10 @@ package screens
 	import feathers.controls.ScrollContainer;
 	import feathers.layout.VerticalLayout;
 	import starling.display.DisplayObject;
+	import starling.events.Event;
 	import starling.textures.Texture;
+	
+	[Event(name="complete", type="starling.events.Event")]
 	
 	/**
 	 * Hello Screen
@@ -44,6 +47,7 @@ package screens
 			_button = new Button();
 			_button.label = 'Back';
 			leftItems.push(_button);
+			_button.addEventListener(Event.TRIGGERED, onBackButtonClick);
 			
 			_container = new ScrollContainer();
 			_container.padding = 15;
@@ -73,6 +77,10 @@ package screens
 			_container.width = this.actualWidth;
 		}
 		
+		protected function onBackButtonClick(event:Event):void
+		{
+			dispatchEventWith(Event.COMPLETE);
+		}
 	}
 
 }

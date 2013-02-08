@@ -12,6 +12,8 @@ package screens
 	import starling.events.Event;
 	import starling.textures.Texture;
 	
+	[Event(name="showHello", type="starling.events.Event")]
+	
 	/**
 	 * Hello Screen
 	 * @author Abiyasa
@@ -48,6 +50,7 @@ package screens
 			var button:Button = new Button();
 			button.label = 'Hello';
 			button.width = 200;
+			button.addEventListener(Event.TRIGGERED, onButtonClicked);
 			_buttons.push(button);
 			_container.addChild(button);
 		}
@@ -61,6 +64,11 @@ package screens
 			
 			_container.y = _header.height;
 			_container.width = this.actualWidth;
+		}
+		
+		protected function onButtonClicked(event:Event):void
+		{
+			dispatchEventWith('showHello');
 		}
 	}
 

@@ -42,8 +42,18 @@ package
 		{
 			// create screens navigator
 			_screenNavigator = new ScreenNavigator();
-			_screenNavigator.addScreen(SCREEN_HELLO, new ScreenNavigatorItem(HelloScreen));
-			_screenNavigator.addScreen(SCREEN_MAIN_MENU, new ScreenNavigatorItem(MainScreen));
+			
+			// create screens
+			_screenNavigator.addScreen(SCREEN_MAIN_MENU, new ScreenNavigatorItem(MainScreen,
+			{
+				showHello: SCREEN_HELLO
+			}));
+			
+			_screenNavigator.addScreen(SCREEN_HELLO, new ScreenNavigatorItem(HelloScreen,
+			{
+				complete: SCREEN_MAIN_MENU
+			}));
+			
 			
 			this.addChild(_screenNavigator);
 			_screenNavigator.showScreen(SCREEN_MAIN_MENU);
