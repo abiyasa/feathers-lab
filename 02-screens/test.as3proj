@@ -17,8 +17,8 @@
   <classpaths>
     <class path="..\libs\Starling-Framework\starling\src" />
     <class path="..\libs\feathers\source" />
-    <class path="..\libs\feathers-examples\MinimalMobileTheme\source" />
-    <class path="..\libs\feathers-examples\MetalWorksMobileTheme\source" />
+    <class path="..\libs\feathers\themes\MetalWorksMobileTheme\source" />
+    <class path="..\libs\feathers\themes\MinimalMobileTheme\source" />
     <class path="src" />
   </classpaths>
   <!-- Build options -->

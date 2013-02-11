@@ -1,9 +1,6 @@
 [submodule "libs/feathers"]
 	path = libs/feathers
 	url = git://github.com/joshtynjala/feathers.git
-[submodule "libs/feathers-examples"]
-	path = libs/feathers-examples
-	url = git://github.com/joshtynjala/feathers-examples.git
 [submodule "libs/Starling-Framework"]
 	path = libs/Starling-Framework
 	url = git://github.com/PrimaryFeather/Starling-Framework.git
